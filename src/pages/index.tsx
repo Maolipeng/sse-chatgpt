@@ -11,7 +11,7 @@ export default function HomePage() {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
     }, 300)
     const handleBegin = async () => {
-        const response = await fetch('http://127.0.0.1:3000/sse', {
+        const response = await fetch('http://127.0.0.1:3003/sse', {
             method: 'GET',
         })
         if (response.ok) {

@@ -1,0 +1,72 @@
+以下是一个基本的二叉树的实现，包括节点类和二叉树类：
+
+```python
+class Node:
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
+
+class BinaryTree:
+    def __init__(self, root):
+        self.root = Node(root)
+
+    def print_tree(self, traversal_type):
+        if traversal_type == "preorder":
+            return self.preorder_traversal(self.root, "")
+        elif traversal_type == "inorder":
+            return self.inorder_traversal(self.root, "")
+        elif traversal_type == "postorder":
+            return self.postorder_traversal(self.root, "")
+        else:
+            print("Traversal type " + str(traversal_type) + " is not supported.")
+            return False
+
+    def preorder_traversal(self, start, traversal):
+        if start:
+            traversal += (str(start.data) + "-")
+            traversal = self.preorder_traversal(start.left, traversal)
+            traversal = self.preorder_traversal(start.right, traversal)
+        return traversal
+
+    def inorder_traversal(self, start, traversal):
+        if start:
+            traversal = self.inorder_traversal(start.left, traversal)
+            traversal += (str(start.data) + "-")
+            traversal = self.inorder_traversal(start.right, traversal)
+        return traversal
+
+    def postorder_traversal(self, start, traversal):
+        if start:
+            traversal = self.postorder_traversal(start.left, traversal)
+            traversal = self.postorder_traversal(start.right, traversal)
+            traversal += (str(start.data) + "-")
+        return traversal
+
+# 创建一个二叉树
+tree = BinaryTree(1)
+tree.root.left = Node(2)
+tree.root.right = Node(3)
+tree.root.left.left = Node(4)
+tree.root.left.right = Node(5)
+
+# 输出不同遍历方式的结果
+print(tree.print_tree("preorder"))  # 1-2-4-5-3-
+print(tree.print_tree("inorder"))  # 4-2-5-1-3-
+print(tree.print_tree("postorder"))  # 4-5-2-3-1-
+```
+
+在上面的例子中，我们创建了一个二叉树，并使用三种不同的遍历方式（先序、中序和后序）打印出了二叉树的节点。
+
+以下是一些学习Node.js的链接：
+
+1. Node.js官方文档：https://nodejs.org/en/docs/
+2. Node.js中文网：http://nodejs.cn/
+3. Node.js视频教程（慕课网）：https://www.imooc.com/learn/1192
+4. Node.js入门教程（菜鸟教程）：https://www.runoob.com/nodejs/nodejs-tutorial.html
+5. Node.js教程（阮一峰）：http://www.ruanyifeng.com/blog/nodejs/
+6. Node.js实战教程（极客时间）：https://time.geekbang.org/course/intro/100024001
+7. Node.js开发指南（《深入浅出Node.js》）：https://book.douban.com/subject/25768396/
+8. Node.js实战（《Node.js实战》）：https://book.douban.com/subject/27039509/
+9. Node.js项目实战（《Node.js项目实战》）：https://book.douban.com/subject/30374705/
+10. Node.js开发指南（《Node.js开发指南》）：https://book.douban.com/subject/26383354/
