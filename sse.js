@@ -65,4 +65,4 @@ if (req.method === 'GET' && req.url === '/sse') {
  
 }).listen(3003);
 
-console.log('SSE server started on port 3003');
+console.log('\x1b[32m%s\x1b[0m', 'SSE server started on port 3003');

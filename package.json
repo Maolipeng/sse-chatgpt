@@ -6,14 +6,22 @@
     "build": "umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
-    "start": "npm-run-all --parallel gc dev",
-    "gc": "node sse.js"
+    "start": "npm-run-all --parallel sse ws dev",
+    "start:ws": "npm-run-all --parallel ws dev",
+    "start:sse": "npm-run-all --parallel sse dev",
+    "sse": "node sse.js",
+    "ws": "node ws.js"
   },
   "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "koa": "^2.14.2",
+    "koa2-cors": "^2.0.6",
     "react-markdown": "^8.0.7",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-katex": "^6.0.3",
     "remark-gfm": "^3.0.1",
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
     "umi": "^4.0.69"
   },
   "devDependencies": {
