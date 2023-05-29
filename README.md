@@ -4,7 +4,7 @@
 ```
 yarn 
 ```
-## 启动sse接口服务和前端服务
+## 启动sse接口服务websocket服务和前端服务
 ```
 yarn start
 ```
